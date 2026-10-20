@@ -1,0 +1,30 @@
+.list {
+  animation: fadeUp 700ms ease-out 80ms both;
+}
+
+.link {
+  display: inline-flex;
+  width: fit-content;
+  color: var(--mantine-color-teal-4);
+  padding: 0.35rem 0;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.link:hover {
+  color: var(--mantine-color-teal-2);
+  transform: translateX(4px);
+  text-decoration: none;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

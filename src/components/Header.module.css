@@ -1,0 +1,53 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(11, 20, 19, 0.82);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.header[data-scrolled] {
+  border-bottom-color: rgba(14, 125, 121, 0.28);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.brand {
+  text-decoration: none;
+}
+
+.brandText {
+  font-family: var(--mantine-font-family-headings);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--mantine-color-teal-4);
+  letter-spacing: -0.02em;
+}
+
+.links {
+  flex-wrap: nowrap;
+}
+
+.link {
+  color: var(--mantine-color-gray-4);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.link:hover,
+.link[data-active] {
+  color: var(--mantine-color-teal-3);
+  text-decoration: none;
+}

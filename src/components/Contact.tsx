@@ -1,45 +1,54 @@
-import { Anchor, Container, Stack, Text, Title } from '@mantine/core';
-import { content } from '../content';
-import { FadeIn } from './FadeIn';
+import { Anchor, Group, Stack, Text } from '@mantine/core';
+import { IconBrandGithub, IconBrandLinkedin, IconMail } from '@tabler/icons-react';
+import { site } from '../content';
+import { Section } from './Section';
+import classes from './Contact.module.css';
+
+const links = [
+  {
+    label: site.email,
+    href: `mailto:${site.email}`,
+    icon: IconMail,
+  },
+  {
+    label: 'GitHub',
+    href: site.github,
+    icon: IconBrandGithub,
+  },
+  {
+    label: 'LinkedIn',
+    href: site.linkedin,
+    icon: IconBrandLinkedin,
+  },
+] as const;
 
 export function Contact() {
-  const { contact } = content;
-
   return (
-    <Container component="section" id="contact" size="md" py={{ base: 56, sm: 80 }}>
-      <FadeIn>
-        <Stack gap="md" maw={720}>
-          <Title order={2} c="teal.8">
-            Contact
-          </Title>
-          <Text c="dark.6" mb="xs">
-            Reach out anytime.
-          </Text>
-          <Anchor href={`mailto:${contact.email}`} c="teal.7" size="lg" underline="hover">
-            {contact.email}
-          </Anchor>
-          <Anchor
-            href={contact.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            c="teal.7"
-            size="lg"
-            underline="hover"
-          >
-            GitHub
-          </Anchor>
-          <Anchor
-            href={contact.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            c="teal.7"
-            size="lg"
-            underline="hover"
-          >
-            LinkedIn
-          </Anchor>
-        </Stack>
-      </FadeIn>
-    </Container>
+    <Section
+      id="contact"
+      title="Contact"
+      subtitle="Reach out by email or connect on GitHub and LinkedIn."
+    >
+      <Stack gap="md" className={classes.list}>
+        {links.map((link) => {
+          const Icon = link.icon;
+          return (
+            <Anchor
+              key={link.href}
+              href={link.href}
+              target={link.href.startsWith('mailto:') ? undefined : '_blank'}
+              rel={link.href.startsWith('mailto:') ? undefined : 'noreferrer'}
+              className={classes.link}
+              underline="never"
+            >
+              <Group gap="sm">
+                <Icon size={22} stroke={1.6} />
+                <Text fw={500}>{link.label}</Text>
+              </Group>
+            </Anchor>
+          );
+        })}
+      </Stack>
+    </Section>
   );
 }

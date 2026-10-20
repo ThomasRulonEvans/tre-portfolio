@@ -1,28 +1,20 @@
-import { Container, Stack, Text, Title } from '@mantine/core';
-import { content } from '../content';
-import { FadeIn } from './FadeIn';
+import { Stack, Text, Title } from '@mantine/core';
+import { education } from '../content';
+import { Section } from './Section';
+import classes from './Education.module.css';
 
 export function Education() {
-  const { education } = content;
-
   return (
-    <Container component="section" id="education" size="md" py={{ base: 56, sm: 80 }}>
-      <FadeIn>
-        <Stack gap="md" maw={720}>
-          <Title order={2} c="teal.8">
-            Education
-          </Title>
-          <Title order={3} fz="xl" c="dark.8">
-            {education.school}
-          </Title>
-          <Text c="dark.6" size="md">
-            {education.degree}
-          </Text>
-          <Text size="sm" c="dark.4">
-            {education.dates}
-          </Text>
-        </Stack>
-      </FadeIn>
-    </Container>
+    <Section id="education" title="Education" muted>
+      <Stack gap="xs" className={classes.block} maw={640}>
+        <Title order={3} className={classes.school}>
+          {education.school}
+        </Title>
+        <Text className={classes.degree}>{education.degree}</Text>
+        <Text size="sm" c="dimmed">
+          {education.dates}
+        </Text>
+      </Stack>
+    </Section>
   );
 }

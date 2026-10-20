@@ -1,60 +1,29 @@
-:root {
-  color-scheme: light;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
   margin: 0;
   min-width: 320px;
-  font-family: Outfit, sans-serif;
-  background-color: #f7fbfb;
-  color: #1f2a2a;
+  background: #0b1413;
+  color: #d7e8e6;
+  font-family: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-.page-shell {
-  min-height: 100vh;
-  background:
-    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(14, 125, 121, 0.16), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 90% 5%, rgba(74, 181, 176, 0.14), transparent 50%),
-    linear-gradient(180deg, #f7fbfb 0%, #eef6f5 45%, #f7fbfb 100%);
+#root {
+  min-height: 100dvh;
 }
 
-.hero-name {
-  letter-spacing: -0.03em;
-  animation: hero-rise 0.9s ease both;
-}
-
-.cta-button {
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-}
-
-.cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(14, 125, 121, 0.28);
-}
-
-@keyframes hero-rise {
-  from {
-    opacity: 0;
-    transform: translateY(0.75rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .hero-name,
-  .cta-button {
-    animation: none !important;
-    transition: none !important;
-  }
+a {
+  color: inherit;
 }

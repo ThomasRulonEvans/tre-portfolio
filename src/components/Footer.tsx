@@ -1,12 +1,17 @@
 import { Container, Text } from '@mantine/core';
-import { content } from '../content';
+import { site } from '../content';
+import classes from './Footer.module.css';
 
 export function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <Container component="footer" size="md" py="xl" mt="md">
-      <Text size="sm" c="dark.3" ta="center">
-        © {new Date().getFullYear()} {content.name}
-      </Text>
-    </Container>
+    <footer className={classes.footer}>
+      <Container size="lg">
+        <Text size="sm" c="dimmed" ta="center">
+          © {year} {site.name}
+        </Text>
+      </Container>
+    </footer>
   );
 }

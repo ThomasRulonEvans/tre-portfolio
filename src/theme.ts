@@ -1,29 +1,37 @@
 import { createTheme } from '@mantine/core';
 import type { MantineColorsTuple } from '@mantine/core';
 
+/** Teal scale centered on brand #0e7d79 */
 const teal: MantineColorsTuple = [
   '#e6f5f4',
   '#c2e6e4',
   '#9ad6d3',
-  '#6fc4c0',
-  '#4ab5b0',
-  '#2a9e99',
+  '#6fc4bf',
+  '#45b2ac',
+  '#1f9a94',
   '#0e7d79',
-  '#0b6a67',
-  '#085754',
-  '#054341',
+  '#0b6864',
+  '#08524f',
+  '#053c3a',
 ];
 
 export const theme = createTheme({
   primaryColor: 'teal',
+  primaryShade: { light: 6, dark: 5 },
   colors: {
     teal,
   },
-  fontFamily: 'Outfit, sans-serif',
+  fontFamily:
+    '"DM Sans", "Segoe UI", system-ui, -apple-system, sans-serif',
   headings: {
-    fontFamily: 'Syne, sans-serif',
-    fontWeight: '700',
+    fontFamily:
+      '"Fraunces", "Georgia", "Times New Roman", serif',
+    fontWeight: '600',
   },
   defaultRadius: 'md',
-  white: '#f7fbfb',
+  black: '#0b1413',
+  white: '#e8f4f3',
+  other: {
+    brandTeal: '#0e7d79',
+  },
 });

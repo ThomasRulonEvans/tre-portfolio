@@ -1,0 +1,20 @@
+.body {
+  animation: fadeUp 700ms ease-out 80ms both;
+}
+
+.paragraph {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--mantine-color-gray-3);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

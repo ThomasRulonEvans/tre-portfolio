@@ -1,0 +1,26 @@
+.timeline {
+  max-width: 44rem;
+  animation: fadeUp 700ms ease-out 80ms both;
+}
+
+.jobTitle {
+  font-size: 1.2rem;
+  color: var(--mantine-color-gray-1);
+}
+
+.description {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--mantine-color-gray-4);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

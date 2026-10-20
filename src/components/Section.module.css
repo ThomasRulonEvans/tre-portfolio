@@ -1,0 +1,43 @@
+.section {
+  padding-block: 4.5rem;
+  scroll-margin-top: 4.5rem;
+}
+
+.section[data-muted] {
+  background: linear-gradient(
+    180deg,
+    rgba(14, 125, 121, 0.12),
+    rgba(14, 125, 121, 0.04)
+  );
+}
+
+.inner {
+  width: 100%;
+}
+
+.heading {
+  animation: fadeUp 600ms ease-out both;
+}
+
+.title {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  color: var(--mantine-color-teal-3);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: var(--mantine-color-gray-5);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
