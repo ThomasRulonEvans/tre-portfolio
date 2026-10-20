@@ -23,6 +23,11 @@ npm run preview
 
 ## GitHub Pages
 
-Pushes to `main` deploy automatically via GitHub Actions.
+Pushes to `main` build the site and publish it to the `gh-pages` branch.
 
-One-time repo setup: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+**One-time repo setup** (required or you’ll see a blank page):
+1. Open **Settings → Pages**
+2. Under **Build and deployment → Source**, choose **Deploy from a branch**
+3. Branch: **gh-pages** / **/(root)** → Save
+
+Live site: https://thomasrulonevans.github.io/tre-portfolio/
