@@ -1,5 +1,6 @@
 .timeline {
-  max-width: 44rem;
+  width: 100%;
+  margin-inline: auto;
   animation: fadeUp 700ms ease-out 80ms both;
 }
 

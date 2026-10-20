@@ -7,7 +7,7 @@ export function Footer() {
 
   return (
     <footer className={classes.footer}>
-      <Container size="lg">
+      <Container size="xl">
         <Text size="sm" c="dimmed" ta="center">
           © {year} {site.name}
         </Text>

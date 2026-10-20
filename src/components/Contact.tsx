@@ -29,7 +29,7 @@ export function Contact() {
       title="Contact"
       subtitle="Reach out by email or connect on GitHub and LinkedIn."
     >
-      <Stack gap="md" className={classes.list}>
+      <Stack gap="md" className={classes.list} align="center">
         {links.map((link) => {
           const Icon = link.icon;
           return (
@@ -41,7 +41,7 @@ export function Contact() {
               className={classes.link}
               underline="never"
             >
-              <Group gap="sm">
+              <Group gap="sm" justify="center">
                 <Icon size={22} stroke={1.6} />
                 <Text fw={500}>{link.label}</Text>
               </Group>

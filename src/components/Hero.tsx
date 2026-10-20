@@ -7,8 +7,8 @@ export function Hero() {
   return (
     <section id="top" className={classes.hero} aria-label="Introduction">
       <div className={classes.atmosphere} aria-hidden />
-      <Container size="lg" className={classes.inner}>
-        <Stack gap="md" className={classes.copy} maw={720}>
+      <Container size="xl" className={classes.inner}>
+        <Stack gap="md" className={classes.copy} maw={820}>
           <Title order={1} className={classes.name}>
             {site.name}
           </Title>

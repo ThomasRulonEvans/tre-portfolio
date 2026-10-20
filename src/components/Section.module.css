@@ -15,8 +15,13 @@
   width: 100%;
 }
 
+.content {
+  align-items: stretch;
+}
+
 .heading {
   animation: fadeUp 600ms ease-out both;
+  width: 100%;
 }
 
 .title {

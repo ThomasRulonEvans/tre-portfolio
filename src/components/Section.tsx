@@ -13,14 +13,14 @@ type SectionProps = {
 export function Section({ id, title, subtitle, children, muted }: SectionProps) {
   return (
     <section id={id} className={classes.section} data-muted={muted || undefined}>
-      <Container size="lg" className={classes.inner}>
-        <Stack gap="xl">
-          <Stack gap="xs" className={classes.heading}>
+      <Container size="xl" className={classes.inner}>
+        <Stack gap="xl" maw={900} mx="auto" w="100%" className={classes.content}>
+          <Stack gap="xs" className={classes.heading} ta="center" align="center">
             <Title order={2} className={classes.title}>
               {title}
             </Title>
             {subtitle ? (
-              <Text className={classes.subtitle} maw={640}>
+              <Text className={classes.subtitle} maw={720} mx="auto">
                 {subtitle}
               </Text>
             ) : null}

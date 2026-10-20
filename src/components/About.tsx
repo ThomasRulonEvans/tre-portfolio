@@ -6,9 +6,9 @@ import classes from './About.module.css';
 export function About() {
   return (
     <Section id="about" title="About" subtitle="What I care about when building software.">
-      <Stack gap="lg" maw={720} className={classes.body}>
+      <Stack gap="lg" className={classes.body}>
         {aboutParagraphs.map((paragraph) => (
-          <Text key={paragraph.slice(0, 32)} className={classes.paragraph}>
+          <Text key={paragraph.slice(0, 32)} className={classes.paragraph} ta="center">
             {paragraph}
           </Text>
         ))}

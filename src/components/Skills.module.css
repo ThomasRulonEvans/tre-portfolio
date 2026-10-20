@@ -1,6 +1,7 @@
 .grid {
   animation: fadeUp 700ms ease-out 80ms both;
-  max-width: 48rem;
+  width: 100%;
+  margin-inline: auto;
 }
 
 .item {

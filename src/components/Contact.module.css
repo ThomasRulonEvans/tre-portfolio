@@ -14,7 +14,7 @@
 
 .link:hover {
   color: var(--mantine-color-teal-2);
-  transform: translateX(4px);
+  transform: translateY(-2px);
   text-decoration: none;
 }
 

@@ -60,7 +60,7 @@ export function Header() {
       className={classes.header}
       data-scrolled={scroll.y > 12 || undefined}
     >
-      <Container size="lg" className={classes.inner}>
+      <Container size="xl" className={classes.inner}>
         <Anchor
           href="#top"
           className={classes.brand}

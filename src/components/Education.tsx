@@ -6,9 +6,9 @@ import classes from './Education.module.css';
 export function Education() {
   return (
     <Section id="education" title="Education" muted>
-      <Stack gap="xl" className={classes.list} maw={640}>
+      <Stack gap="xl" className={classes.list} ta="center" align="center">
         {education.map((entry) => (
-          <Stack key={entry.school} gap="xs" className={classes.block}>
+          <Stack key={entry.school} gap="xs" className={classes.block} align="center">
             <Title order={3} className={classes.school}>
               {entry.school}
             </Title>
