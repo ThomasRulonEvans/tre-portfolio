@@ -40,6 +40,8 @@ jobs:
           mkdir docs
           cp -r dist/. docs/
           touch docs/.nojekyll
+          # Keep custom domain mapping for GitHub Pages
+          echo "thomasevans.dev" > docs/CNAME
 
       - name: Commit docs to main
         run: |

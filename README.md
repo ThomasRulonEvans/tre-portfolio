@@ -2,7 +2,7 @@
 
 Single-page portfolio built with Vite, React, TypeScript, and Mantine.
 
-**Live site:** https://thomasrulonevans.github.io/tre-portfolio/
+**Live site:** https://thomasevans.dev/
 
 ## Run locally
 
