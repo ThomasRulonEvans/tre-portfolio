@@ -21,13 +21,16 @@ npm run build
 npm run preview
 ```
 
-## GitHub Pages
+## GitHub Pages (required settings)
 
-Pushes to `main` build the site and publish it to the `gh-pages` branch.
+The built site is published to the `docs/` folder on `main`.
 
-**One-time repo setup** (required or you’ll see a blank page):
-1. Open **Settings → Pages**
-2. Under **Build and deployment → Source**, choose **Deploy from a branch**
-3. Branch: **gh-pages** / **/(root)** → Save
+**One-time setup** — without this you’ll get a blank page:
 
-Live site: https://thomasrulonevans.github.io/tre-portfolio/
+1. Go to **Settings → Pages**: https://github.com/ThomasRulonEvans/tre-portfolio/settings/pages
+2. **Source:** Deploy from a branch
+3. **Branch:** `main`
+4. **Folder:** `/docs` (not `/ (root)`)
+5. Click **Save**
+
+Wait 1–2 minutes, then hard-refresh the site.
