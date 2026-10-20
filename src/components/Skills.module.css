@@ -1,5 +1,22 @@
-.list {
+.grid {
   animation: fadeUp 700ms ease-out 80ms both;
+  max-width: 48rem;
+}
+
+.item {
+  transition: transform 180ms ease;
+}
+
+.item:hover {
+  transform: translateY(-4px);
+}
+
+.icon {
+  transition: box-shadow 180ms ease;
+}
+
+.item:hover .icon {
+  box-shadow: 0 8px 20px rgba(14, 125, 121, 0.28);
 }
 
 @keyframes fadeUp {

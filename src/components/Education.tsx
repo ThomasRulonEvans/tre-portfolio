@@ -6,14 +6,18 @@ import classes from './Education.module.css';
 export function Education() {
   return (
     <Section id="education" title="Education" muted>
-      <Stack gap="xs" className={classes.block} maw={640}>
-        <Title order={3} className={classes.school}>
-          {education.school}
-        </Title>
-        <Text className={classes.degree}>{education.degree}</Text>
-        <Text size="sm" c="dimmed">
-          {education.dates}
-        </Text>
+      <Stack gap="xl" className={classes.list} maw={640}>
+        {education.map((entry) => (
+          <Stack key={entry.school} gap="xs" className={classes.block}>
+            <Title order={3} className={classes.school}>
+              {entry.school}
+            </Title>
+            <Text className={classes.degree}>{entry.degree}</Text>
+            <Text size="sm" c="dimmed">
+              {entry.dates}
+            </Text>
+          </Stack>
+        ))}
       </Stack>
     </Section>
   );

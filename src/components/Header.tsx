@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   Anchor,
   Box,
@@ -13,10 +13,34 @@ import { useDisclosure, useWindowScroll } from '@mantine/hooks';
 import { navLinks, site } from '../content';
 import classes from './Header.module.css';
 
+/** Ignore scroll-driven resets while click navigation is still animating */
+const NAV_SCROLL_GRACE_MS = 900;
+
 export function Header() {
   const [opened, { toggle, close }] = useDisclosure(false);
   const [scroll] = useWindowScroll();
-  const [active, setActive] = useState('#about');
+  const [active, setActive] = useState('');
+  const ignoreUntil = useRef(0);
+  const lastScrollY = useRef(scroll.y);
+
+  useEffect(() => {
+    if (Date.now() < ignoreUntil.current) {
+      lastScrollY.current = scroll.y;
+      return;
+    }
+
+    if (active && scroll.y !== lastScrollY.current) {
+      setActive('');
+    }
+
+    lastScrollY.current = scroll.y;
+  }, [scroll.y, active]);
+
+  const activateLink = (href: string) => {
+    ignoreUntil.current = Date.now() + NAV_SCROLL_GRACE_MS;
+    setActive(href);
+    close();
+  };
 
   const links = navLinks.map((link) => (
     <Anchor
@@ -24,10 +48,7 @@ export function Header() {
       href={link.href}
       className={classes.link}
       data-active={active === link.href || undefined}
-      onClick={() => {
-        setActive(link.href);
-        close();
-      }}
+      onClick={() => activateLink(link.href)}
     >
       {link.label}
     </Anchor>
@@ -40,7 +61,15 @@ export function Header() {
       data-scrolled={scroll.y > 12 || undefined}
     >
       <Container size="lg" className={classes.inner}>
-        <Anchor href="#top" className={classes.brand} underline="never">
+        <Anchor
+          href="#top"
+          className={classes.brand}
+          underline="never"
+          onClick={() => {
+            ignoreUntil.current = Date.now() + NAV_SCROLL_GRACE_MS;
+            setActive('');
+          }}
+        >
           <Text component="span" className={classes.brandText}>
             {site.name}
           </Text>
